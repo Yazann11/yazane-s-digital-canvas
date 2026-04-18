@@ -10,7 +10,7 @@ const HeroSection = () => (
     <div className="container flex flex-col md:flex-row items-center gap-12 py-16">
       <div className="flex-1 text-center md:text-left animate-fade-in-up">
         <p className="text-primary font-medium mb-2">Hello, I'm</p>
-        <h1 className="font-heading text-4xl md:text-6xl font-extrabold text-foreground leading-tight mb-4">
+        <h1 className="font-heading text-5xl md:text-7xl font-extrabold leading-tight mb-4 title-gradient">
           Yazane Fares
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-6">

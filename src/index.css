@@ -72,6 +72,26 @@
   .section-alt {
     background-color: hsl(var(--section-alt));
   }
+
+  .title-gradient {
+    background: linear-gradient(135deg, hsl(200 95% 70%), hsl(190 90% 55%) 50%, hsl(220 85% 65%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0 0 40px hsl(200 85% 55% / 0.25);
+    letter-spacing: -0.02em;
+  }
+
+  .title-accent-bar {
+    @apply relative inline-block pb-3;
+  }
+  .title-accent-bar::after {
+    content: "";
+    @apply absolute left-1/2 -translate-x-1/2 bottom-0 h-1 w-16 rounded-full;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(200 95% 70%));
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.6);
+  }
 }
 
 @keyframes fade-in-up {

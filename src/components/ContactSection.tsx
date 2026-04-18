@@ -10,7 +10,7 @@ const ContactSection = () => (
   <section id="contact" className="section-padding section-alt">
     <div className="container max-w-3xl text-center">
       <span className="text-sm font-semibold uppercase tracking-wider text-primary">Contact</span>
-      <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-10">Get in Touch</h2>
+      <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3 mb-12 title-gradient title-accent-bar">Get in Touch</h2>
 
       <div className="grid sm:grid-cols-3 gap-6">
         {contacts.map((c) => (
