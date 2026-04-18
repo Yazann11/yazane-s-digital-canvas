@@ -4,7 +4,7 @@ const EducationSection = () => (
   <section id="education" className="section-padding">
     <div className="container max-w-3xl text-center">
       <span className="text-sm font-semibold uppercase tracking-wider text-primary">Education</span>
-      <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-10">My Background</h2>
+      <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3 mb-12 title-gradient title-accent-bar">My Background</h2>
 
       <div className="bg-card rounded-xl p-8 shadow-sm border border-border inline-flex flex-col items-center gap-4">
         <div className="w-14 h-14 rounded-lg bg-accent flex items-center justify-center">

@@ -11,7 +11,7 @@ const SkillsSection = () => (
     <div className="container max-w-4xl">
       <div className="text-center mb-12">
         <span className="text-sm font-semibold uppercase tracking-wider text-primary">Skills</span>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">What I Do</h2>
+        <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3 title-gradient title-accent-bar">What I Do</h2>
       </div>
       <div className="grid md:grid-cols-3 gap-8">
         {skills.map((s) => (

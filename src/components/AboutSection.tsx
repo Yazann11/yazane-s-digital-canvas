@@ -7,7 +7,7 @@ const AboutSection = () => (
         <User size={20} />
         <span className="text-sm font-semibold uppercase tracking-wider">About Me</span>
       </div>
-      <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6 animate-fade-in-up-delay-1">
+      <h2 className="font-heading text-4xl md:text-5xl font-bold mb-8 animate-fade-in-up-delay-1 title-gradient title-accent-bar">
         Who I Am
       </h2>
       <p className="text-muted-foreground leading-relaxed text-lg animate-fade-in-up-delay-2">

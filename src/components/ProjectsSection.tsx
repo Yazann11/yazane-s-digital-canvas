@@ -5,7 +5,7 @@ const ProjectsSection = () => (
     <div className="container max-w-4xl">
       <div className="text-center mb-12">
         <span className="text-sm font-semibold uppercase tracking-wider text-primary">Projects</span>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">My Work</h2>
+        <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3 title-gradient title-accent-bar">My Work</h2>
       </div>
 
       <div className="bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-shadow">
