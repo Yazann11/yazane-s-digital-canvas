@@ -1,13 +1,18 @@
 import { ArrowDown } from "lucide-react";
 import avatar from "@/assets/avatar.jpg";
+import moneyBg from "@/assets/money-bg.jpg";
 
 const HeroSection = () => (
   <section
     id="hero"
-    className="min-h-screen flex items-center justify-center pt-16"
-    style={{ background: "var(--hero-gradient)" }}
+    className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
+    style={{
+      backgroundImage: `linear-gradient(hsl(var(--background) / 0.7), hsl(var(--background) / 0.85)), url(${moneyBg})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
   >
-    <div className="container py-16 animate-fade-in-up text-center max-w-3xl">
+    <div className="container py-16 animate-fade-in-up text-center max-w-3xl relative z-10">
       <img
         src={avatar}
         alt="Yazane Fares avatar"
