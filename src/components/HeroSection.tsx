@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import avatar from "@/assets/avatar.jpg";
 
 const HeroSection = () => (
   <section
@@ -7,6 +8,13 @@ const HeroSection = () => (
     style={{ background: "var(--hero-gradient)" }}
   >
     <div className="container py-16 animate-fade-in-up text-center max-w-3xl">
+      <img
+        src={avatar}
+        alt="Yazane Fares avatar"
+        width={160}
+        height={160}
+        className="mx-auto mb-6 h-40 w-40 rounded-full object-cover ring-4 ring-primary/40 shadow-[0_0_40px_hsl(var(--primary)/0.4)]"
+      />
       <p className="text-primary font-medium mb-3">Hello, I'm</p>
       <h1 className="font-heading text-5xl md:text-7xl font-extrabold leading-tight mb-4 title-gradient">
         Yazane Fares
