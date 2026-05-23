@@ -7,7 +7,6 @@ import certificatesForest from "@/assets/dark-forest-6.jpg";
 import contactForest from "@/assets/dark-forest-7.jpg";
 import footerForest from "@/assets/dark-forest-8.jpg";
 import gamesForest from "@/assets/dark-forest.jpg";
-
 export const backgrounds = {
   hero: heroForest,
   about: aboutForest,
