@@ -1,42 +1,57 @@
 import { ArrowDown } from "lucide-react";
 import avatar from "@/assets/avatar.jpg";
-import moneyBg from "@/assets/money-bg.jpg";
+import { backgrounds } from "@/lib/backgrounds";
 
 const HeroSection = () => (
   <section
     id="hero"
-    className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
-    style={{
-      backgroundImage: `linear-gradient(hsl(var(--background) / 0.7), hsl(var(--background) / 0.85)), url(${moneyBg})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
+    className="relative min-h-screen flex items-center justify-center pt-14 overflow-hidden"
   >
-    <div className="container py-16 animate-fade-in-up text-center max-w-3xl relative z-10">
-      <img
-        src={avatar}
-        alt="Yazane Fares avatar"
-        width={160}
-        height={160}
-        className="mx-auto mb-6 h-40 w-40 rounded-full object-cover ring-4 ring-primary/40 shadow-[0_0_40px_hsl(var(--primary)/0.4)]"
-      />
-      <p className="text-primary font-medium mb-3">Hello, I'm</p>
-      <h1 className="font-heading text-5xl md:text-7xl font-extrabold leading-tight mb-4 title-gradient">
-        Yazane Fares
-      </h1>
-      <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-6">
-        Junior Web Developer
-      </p>
-      <p className="text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
-        I am a passionate software engineering student focused on building modern and efficient web applications.
-      </p>
-      <a
-        href="#contact"
-        className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
-      >
-        Get in Touch
-        <ArrowDown size={16} />
-      </a>
+    {/* Dark forest photo background */}
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 dark:opacity-20"
+      style={{ backgroundImage: `url(${backgrounds.hero})` }}
+      aria-hidden="true"
+    />
+    {/* Dark overlay for readability */}
+    <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" aria-hidden="true" />
+
+    {/* Subtle forest-green accent glow */}
+    <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 dark:bg-primary/3 blur-[120px] pointer-events-none" aria-hidden="true" />
+
+    <div className="container py-16 animate-fade-in-up relative z-10">
+      <div className="flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-14 max-w-5xl mx-auto">
+        <div className="relative shrink-0">
+          <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-primary/30 to-primary/10 blur-md opacity-70" aria-hidden="true" />
+          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent" aria-hidden="true" />
+          <img
+            src={avatar}
+            alt="Yazane Fares avatar"
+            width={280}
+            height={280}
+            className="h-64 w-64 md:h-72 md:w-72 rounded-xl object-cover ring-2 ring-primary/20 shadow-lg shadow-primary/10 relative"
+          />
+        </div>
+        <div className="flex-1 min-w-0 text-center md:text-left">
+          <p className="text-xs text-muted-foreground uppercase tracking-[0.15em] mb-2">Hello, I'm</p>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold leading-tight mb-2">
+            Yazane <span className="text-primary">Fares</span>
+          </h1>
+          <p className="text-sm text-muted-foreground mb-4">
+            Junior Web Developer
+          </p>
+          <p className="text-xs text-muted-foreground/70 max-w-md leading-relaxed mb-6">
+            Software engineering student focused on building modern and efficient web applications.
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-2 rounded-md text-xs font-medium hover:bg-primary/90 transition-colors shadow-sm shadow-primary/20"
+          >
+            Get in Touch
+            <ArrowDown size={12} />
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 );

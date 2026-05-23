@@ -1,4 +1,5 @@
 import { Mail, Github, Linkedin } from "lucide-react";
+import { backgrounds } from "@/lib/backgrounds";
 
 const contacts = [
   { icon: Mail, label: "Email", value: "your.email@example.com", href: "mailto:your.email@example.com" },
@@ -7,25 +8,38 @@ const contacts = [
 ];
 
 const ContactSection = () => (
-  <section id="contact" className="section-padding section-alt">
-    <div className="container max-w-3xl text-center">
-      <span className="text-sm font-semibold uppercase tracking-wider text-primary">Contact</span>
-      <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3 mb-12 title-gradient title-accent-bar">Get in Touch</h2>
+  <section id="contact" className="relative section-padding section-alt overflow-hidden">
+    {/* Dark forest photo background */}
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 dark:opacity-12"
+      style={{ backgroundImage: `url(${backgrounds.contact})` }}
+      aria-hidden="true"
+    />
+    <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/20 to-background/70" aria-hidden="true" />
 
-      <div className="grid sm:grid-cols-3 gap-6">
+    <div className="container max-w-5xl relative z-10">
+      <div className="mb-12">
+        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">Contact</span>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">
+          Get in <span className="text-primary">Touch</span>
+        </h2>
+      </div>
+      <div className="grid sm:grid-cols-3 gap-4">
         {contacts.map((c) => (
           <a
             key={c.label}
             href={c.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-card rounded-xl p-6 shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-3"
+            className="bg-card rounded-lg p-5 border border-border hover:border-primary/30 transition-all duration-300 flex items-center gap-4"
           >
-            <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
-              <c.icon className="text-accent-foreground" size={20} />
+            <div className="w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+              <c.icon className="text-primary" size={16} />
             </div>
-            <h3 className="font-heading font-semibold text-foreground text-sm">{c.label}</h3>
-            <p className="text-xs text-muted-foreground">{c.value}</p>
+            <div className="min-w-0">
+              <h3 className="text-xs font-semibold text-foreground">{c.label}</h3>
+              <p className="text-[11px] text-muted-foreground truncate">{c.value}</p>
+            </div>
           </a>
         ))}
       </div>

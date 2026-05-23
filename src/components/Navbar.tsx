@@ -16,20 +16,20 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
-      <div className="container flex items-center justify-between h-16">
-        <a href="#" className="font-heading text-lg font-bold text-foreground">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <div className="container flex items-center justify-between h-14">
+        <a href="#" className="font-heading text-base font-bold tracking-tight">
           YF
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
+          <ul className="flex items-center gap-6">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                  className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
                 >
                   {l.label}
                 </a>
@@ -47,21 +47,20 @@ const Navbar = () => {
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-card border-b border-border">
-          <ul className="flex flex-col py-4">
+        <div className="md:hidden bg-background border-b border-border">
+          <ul className="flex flex-col py-3">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block px-6 py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                  className="block px-6 py-2.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
                 >
                   {l.label}
                 </a>

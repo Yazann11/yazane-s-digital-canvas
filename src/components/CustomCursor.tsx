@@ -6,6 +6,7 @@ const CustomCursor = () => {
   const [hidden, setHidden] = useState(true);
   const [hovering, setHovering] = useState(false);
   const [clicking, setClicking] = useState(false);
+  const [gameMode, setGameMode] = useState(false);
 
   useEffect(() => {
     // Disable on touch devices
@@ -28,11 +29,14 @@ const CustomCursor = () => {
         'a, button, [role="button"], input, textarea, select, label, [data-cursor="hover"]'
       );
       setHovering(isInteractive);
+
+      const isGame = !!target.closest('[data-cursor="game"]');
+      setGameMode(isGame);
     };
 
     const animate = () => {
-      ring.x += (pos.x - ring.x) * 0.18;
-      ring.y += (pos.y - ring.y) * 0.18;
+      ring.x += (pos.x - ring.x) * 0.1;
+      ring.y += (pos.y - ring.y) * 0.1;
       if (ringRef.current) {
         ringRef.current.style.transform = `translate3d(${ring.x}px, ${ring.y}px, 0) translate(-50%, -50%)`;
       }
@@ -70,15 +74,15 @@ const CustomCursor = () => {
         ref={dotRef}
         aria-hidden
         className={`cursor-dot ${hidden ? "opacity-0" : "opacity-100"} ${
-          clicking ? "scale-50" : "scale-100"
-        }`}
+          clicking ? "scale-75" : "scale-100"
+        } ${gameMode ? "is-game" : ""}`}
       />
       <div
         ref={ringRef}
         aria-hidden
         className={`cursor-ring ${hidden ? "opacity-0" : "opacity-100"} ${
           hovering ? "is-hover" : ""
-        } ${clicking ? "is-click" : ""}`}
+        } ${clicking ? "is-click" : ""} ${gameMode ? "is-game" : ""}`}
       />
     </>
   );
