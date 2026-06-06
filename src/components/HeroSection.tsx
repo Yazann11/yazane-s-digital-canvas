@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import avatar from "@/assets/avatar.jpg";
+import avatar from "@/assets/profile-photo.jpg";
 import { backgrounds } from "@/lib/backgrounds";
 
 const HeroSection = () => (
@@ -26,7 +26,7 @@ const HeroSection = () => (
           <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent" aria-hidden="true" />
           <img
             src={avatar}
-            alt="Yazane Fares avatar"
+            alt="Black panther with green eyes"
             width={280}
             height={280}
             className="h-64 w-64 md:h-72 md:w-72 rounded-xl object-cover ring-2 ring-primary/20 shadow-lg shadow-primary/10 relative"
